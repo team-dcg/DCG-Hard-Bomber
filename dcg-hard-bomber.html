@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DCG HARD Bomber</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #1e3c72, #2a5298);
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            width: 320px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            color: #0ff;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+        }
+        input, button {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+        }
+        input {
+            background: #222;
+            color: #0ff;
+        }
+        button {
+            background: #0ff;
+            color: black;
+            cursor: pointer;
+        }
+        button:hover {
+            background: white;
+            color: #0ff;
+        }
+        .snow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .snowflake {
+            position: absolute;
+            font-size: 20px;
+            opacity: 0.8;
+            animation: fall linear infinite, sway ease-in-out infinite;
+        }
+        @keyframes fall {
+            0% {
+                transform: translateY(-50px);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+        @keyframes sway {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>DCG HARD Bomber</h2>
+        <form method="POST">
+            <input type="text" name="phone" placeholder="Enter phone number" required>
+            <input type="number" name="amount" placeholder="Enter amount (max 100)" required>
+            <button type="submit">Submit</button>
+        </form>
+            </div>
+    <div class="snow"></div>
+    <script>
+        const snowContainer = document.querySelector('.snow');
+        for (let i = 0; i < 50; i++) {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.style.left = ${Math.random() * 100}vw;
+            snowflake.style.animationDuration = ${Math.random() * 5 + 5}s;
+            snowflake.style.animationDelay = ${Math.random() * 5}s;
+            snowflake.textContent = '❄️';
+            snowContainer.appendChild(snowflake);
+        }
+    </script>
+</body>
+</html>
